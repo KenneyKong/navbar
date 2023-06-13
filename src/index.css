@@ -1,5 +1,6 @@
 .nav--container {
   width: 100%;
+  height: 6rem;
   display: flex;
   position: fixed;
   top: 0;
@@ -9,12 +10,16 @@
   font-family: monospace;
   margin: 0;
   padding: 0;
-  box-shadow: 0 4px 0 rgb(252, 252, 252);
+  box-shadow: 0 1px 0 rgba(158, 238, 8, 0.50);
+  background: linear-gradient(to bottom, rgb(6, 56, 155), black);
 }
 
 .dev {
   padding-left: 10px;
-  font-size: 33px;
+  font-size: 38px;
+  -webkit-text-stroke: 2px rgba(158, 238, 8, 0.50);
+  text-shadow: 2px 2px rgba(158, 238, 8, 0.50);
+  color: #000000;
 }
 
 nav {
@@ -24,7 +29,16 @@ nav {
   margin: 20px;
   justify-content: space-between;
   font-size: 16px;
+}
 
+.nav--list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav--list li {
+  margin-right: 10px;
 }
 
 a:link {
@@ -35,7 +49,10 @@ a:link {
 }
 
 a:hover {
-  text-decoration: overline;
+  color: rgba(158, 238, 8, 0.20) !important;
+  -webkit-text-stroke: 2px rgba(158, 238, 8, 0.50);
+  text-shadow: 2px 2px rgba(158, 238, 8, 0.50);
+  color: #000000;
 }
 
 a:visited {
@@ -53,4 +70,13 @@ body {
   height: 100vh;
   background-blend-mode: darken;
   background-color: rgba(0, 0, 0, .80);
+}
+
+.main--body {
+  padding-top: 10rem;
+  font-family: monospace;
+}
+
+input, button {
+  font-family: monospace;
 }
