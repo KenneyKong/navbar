@@ -68,3 +68,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+This goes in Main.js in the JSX
+
+    {/*
+    <form onSubmit={handleFormSubmit}>
+      <input 
+        id='name-input' 
+        type='text' 
+        value={name} 
+        onChange={handleNameChange} 
+        placeholder='Enter your name' 
+        required 
+        />
+      <button type='submit'>Submit</button>
+    </form>
+    {/* If the showWelcome state variable is true, display a welcome message   */}
+    {showWelcome && <p>Welcome, {name}!</p>}
+        <About name={name} /> {/* Pass the name state as a prop to About component */}
+      */}    
