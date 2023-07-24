@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import About from './About'
 
 // Define the App component using an arrow function
 export default function Main() { 
@@ -20,18 +22,24 @@ export default function Main() {
     <center>
     <div className='main--body'>
       <h1 className='main--welcome'>Enter the Silicon Rhode</h1>
+        
     <form onSubmit={handleFormSubmit}>
-      <input id='name-input' type='text' value={name} onChange={handleNameChange} placeholder='Enter your name' required />
+      <input 
+        id='name-input' 
+        type='text' 
+        value={name} 
+        onChange={handleNameChange} 
+        placeholder='Enter your name' 
+        required 
+        />
       <button type='submit'>Submit</button>
     </form>
     { /*If the showWelcome state variable is true, display a welcome message   */ }
-    {showWelcome && (
-      <p>Welcome, {name}!</p>
-      )}
-    
-    </div>
+    {showWelcome && <p>Welcome, {name}!</p>}
+        <About name={name} /> {/* Pass the name state as a prop to About component */}
+      </div>
     </center>
-  )
+  );
   
 }
 
