@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './index.css'; // Import your custom CSS file for Login component
+import './index.css';
 
 function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
+  const [message, setMessage] = useState('');
 
-  async function handleSubmit(event) {
+  async function handleLoginSubmit(event) {
     event.preventDefault();
     try {
       const response = await axios.post('http://localhost:8081/login', formData);
-      console.log(response.data);
-      // Assuming the server returns a successful response, you can add any additional logic here
+      setMessage(response.data); // Set login success message
+      setFormData({ email: '', password: '' }); // Clear input fields
     } catch (error) {
       console.log(error.response.data);
+      setMessage('Invalid email or password'); // Set login failure message
+    }
+  }
+
+  async function handleSignupSubmit(event) {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:8081/signup', formData);
+      setMessage(response.data); // Set signup success message
+      setFormData({ email: '', password: '' }); // Clear input fields
+    } catch (error) {
+      console.log(error.response.data);
+      setMessage('Signup failed'); // Set signup failure message
     }
   }
 
@@ -27,7 +41,7 @@ function Login() {
   return (
     <div className='login--container'>
       <div className='login--box'>
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className='login--email'>
             <label htmlFor='email'>Email</label>
             <input
@@ -52,7 +66,11 @@ function Login() {
               onChange={handleInputChange}
             />
           </div>
-          <button className='login--button'>Login</button>
+          {message && <p className='login--message'>{message}</p>}
+          <div className='button--container'>
+          <button className='login--button' onClick={handleLoginSubmit}>Login</button>
+          <button className='signup--button' onClick={handleSignupSubmit}>Sign up</button>
+          </div>
         </form>
       </div>
     </div>

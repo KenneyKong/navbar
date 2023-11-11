@@ -36,11 +36,9 @@ export default function Main() {
     </form>
     { /*If the showWelcome state variable is true, display a welcome message   */ }
     {showWelcome && <p>Welcome, {name}!</p>}
-        <About name={name} /> {/* Pass the name state as a prop to About component */}
       </div>
     </center>
-  );
-  
+  ); 
 }
 
 
