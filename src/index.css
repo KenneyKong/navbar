@@ -19,7 +19,7 @@
   font-size: 38px;
   -webkit-text-stroke: 2px rgba(158, 238, 8, 0.50);
   text-shadow: 2px 2px rgba(158, 238, 8, 0.50);
-  color: #000000;
+  color: #000;
 }
 
 nav {
@@ -52,7 +52,7 @@ a:hover {
   color: rgba(158, 238, 8, 0.20) !important;
   -webkit-text-stroke: 2px rgba(158, 238, 8, 0.50);
   text-shadow: 2px 2px rgba(158, 238, 8, 0.50);
-  color: #000000;
+  color: #000;
 }
 
 a:visited {
